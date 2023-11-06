@@ -223,7 +223,9 @@ main {
   -ms-transition: transform 250ms ease-in-out, box-shadow 250ms;
   -o-transition: transform 250ms ease-in-out, box-shadow 250ms;
 }
-.card:hover {
+.card:hover,
+.card:focus-within,
+.card:focus {
   transform: translate(-0.2em, -0.2em);
   box-shadow: var(--BOX-SHADOW);
   -webkit-transform: translate(-0.2em, -0.2em);
@@ -243,7 +245,9 @@ main {
   -ms-transition: filter 250ms;
   -o-transition: filter 250ms;
 }
-.card:hover .content {
+.card:hover .content,
+.card:focus .content,
+.card:focus-within .content {
   filter: blur(5px);
   -webkit-filter: blur(5px);
 }
@@ -264,9 +268,45 @@ main {
   -o-transition: opacity 250ms ease-in-out;
 }
 .card:hover .on-hover,
+.card:focus .on-hover,
 .card:focus-within .on-hover {
   opacity: 1;
   pointer-events: all;
+}
+/* NEWSLETTER */
+.subscribe {
+  width: 100%;
+  padding: 3rem min(5rem, 15vw);
+  font-size: 2em;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+}
+.subscribe form {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 1em;
+  font-size: 0.8em;
+  align-items: stretch;
+}
+.subscribe form label {
+  flex: 0 1;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+}
+.subscribe form .button {
+  flex: 0 1;
+  padding: 1em;
+}
+.subscribe form input {
+  flex: 1 1;
+  padding: 1em;
+}
+.subscribe h2 {
+  font-size: 2em;
+  width: 100%;
 }
 /* |FOOTER| */
 footer {
@@ -336,6 +376,7 @@ footer section {
   -o-transition: color 100ms, background 100ms;
 }
 .button:hover,
+.button:focus,
 .button:focus-within,
 .button.active {
   color: var(--FG1);
@@ -428,7 +469,8 @@ footer section {
   -o-transform: scaleX(0.8);
 }
 .a--underline:hover::after,
-.a--underline:focus::after {
+.a--underline:focus::after,
+.a--underline:focus-within::after {
   transform: scaleX(1);
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
@@ -447,7 +489,9 @@ footer section {
   -ms-transition: transform 100ms ease-out;
   -o-transition: transform 100ms ease-out;
 }
-.a--size:hover {
+.a--size:hover,
+.a--size:focus,
+.a--size:focus-within {
   transform: scale(1.15);
   -webkit-transform: scale(1.15);
   -moz-transform: scale(1.15);
